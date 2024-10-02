@@ -1,6 +1,6 @@
 import Pagina from "../Templates/Pagina";
-import FormCadVenda from "./Formularios/FormCadVenda";
-import TabelaVendas from "./Tabelas/TabelaVendas";
+import FormCadVenda from "../Formularios/FormCadVenda";
+import TabelaVendas from "../Tabelas/TabelaVendas";
 import { useState } from "react";
 
 export default function TelaVenda(props){

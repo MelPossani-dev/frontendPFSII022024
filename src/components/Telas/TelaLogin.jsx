@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
-import FormLogin from "./Formularios/FormLogin";
-import loginImg from '../../assets/imagens/login-icon.jpg';
+import FormLogin from "../Formularios/FormLogin";
+import loginImg from '../../assets/imagens/techstore.jpg';
+import App from "../../App";
 export default function TelaLogin(props){
     return (
         <Container className='w-50 d-flex align-items-center  

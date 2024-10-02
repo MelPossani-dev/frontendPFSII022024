@@ -1,7 +1,7 @@
 import { Container, Form, Button } from 'react-bootstrap';
 import { useContext, useState } from 'react';
-import { ContextoUsuarioLogado } from '../../../App';
-import { login } from '../../../servicos/loginService';
+import { ContextoUsuarioLogado } from '../../App';
+import { login } from '../../services/loginService';
 export default function FormLogin(props) {
     const contexto = useContext(ContextoUsuarioLogado);
     const [usuario, setUsuario] = useState({

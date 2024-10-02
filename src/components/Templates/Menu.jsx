@@ -15,9 +15,8 @@ export default function Menu(props) {
                     <Nav className="me-auto">
                         <NavDropdown title="Cadastros" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#" as={Link} to="/cliente">Clientes</NavDropdown.Item>
-                            <NavDropdown.Item href="#" as={Link} to="/fornecedor">Fornecedores</NavDropdown.Item>
-                            <NavDropdown.Item href="#" as={Link} to="/produto">Produtos</NavDropdown.Item>
-                            <NavDropdown.Item href="#" as={Link} to="/categoria">Categorias</NavDropdown.Item>
+                            <NavDropdown.Item href="#" as={Link} to="/fornecedor">Máquinas</NavDropdown.Item>
+                            <NavDropdown.Item href="#" as={Link} to="/produto">Fabricantes</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Operações" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Compra</NavDropdown.Item>
@@ -25,7 +24,7 @@ export default function Menu(props) {
                         </NavDropdown>
                         <NavDropdown title="Relatórios" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Clientes</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1">Fornecedores</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.1">Fabricantes</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.1">Estoque</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.1">Vendas</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.1">Compras</NavDropdown.Item>

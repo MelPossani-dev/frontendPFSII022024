@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
-import BarraBusca from "../../busca/BarraBusca";
-import CaixaSelecao from "../../busca/CaixaSelecao";
-import TabelaItensVenda from "../Tabelas/TabelaItensVenda";
+import BarraBusca from "../busca/BarraBusca";
+import CaixaSelecao from "../busca/CaixaSelecao";
+import TabelaItensVenda from "../Tabelas/TabelaItensPedido";
 
 export default function FormCadVenda(props) {
     const [validado, setValidado] = useState(false);
-    
-
-    //O estado venda possui correlação com a venda gerenciada no backend
+     
     const [venda, setVenda] = useState({
         id: 0,
         dataPedido: "",
@@ -100,8 +98,7 @@ export default function FormCadVenda(props) {
             </Row>
             <Row>
                 {
-                    //Seção resposável por permitir que produtos sejam selecionados para a venda
-                    //Demonstração de relacionamento muitos para muitos
+
                 }
                 <Container className="m-3 border">
                     <Row className="m-3">
@@ -109,11 +106,11 @@ export default function FormCadVenda(props) {
                             <Form.Label>Selecione um produto</Form.Label>
                         </Col>
                         <Col>
-                            <CaixaSelecao enderecoFonteDados={"http://localhost:4000/produto"}
-                                campoChave={"codigo"}
-                                campoExibicao={"descricao"}
+                            <CaixaSelecao enderecoFonteDados={"http://localhost:4000/maquina"}
+                                campoChave={"maq_codigo"}
+                                campoExibicao={"maq_modelo"}
                                 funcaoSelecao={(objeto)=>{}}
-                                localLista={'listaProdutos'} />
+                                localLista={'listaMaquinas'} />
                         </Col>
                     </Row>
                     <Row>
@@ -130,7 +127,7 @@ export default function FormCadVenda(props) {
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group>
-                                        <Form.Label>Descrição do Produto:</Form.Label>
+                                        <Form.Label>Descrição da Máquina:</Form.Label>
                                         <Form.Control type="text" disabled />
                                     </Form.Group>
                                 </Col>

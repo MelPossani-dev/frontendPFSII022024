@@ -1,16 +1,16 @@
 import { useState, useContext } from 'react';
 import { Container, Form, Row, Col, Button, FloatingLabel } from 'react-bootstrap';
-import { ContextoUsuarioLogado } from '../../../App';
-import { gravar, alterar } from '../../../servicos/categoriaService';
+import { ContextoUsuarioLogado } from '../../App';
+import { gravar, alterar } from '../../services/fabricanteService';
 
-export default function FormCadCategorias(props) {
-    const [categoria, setCategoria] = useState(props.categoriaSelecionada);
+export default function FormFabricantes(props) {
+    const [fabricante, setFabricante] = useState(props.fabricanteSelecionado);
     const [validado, setValidado] = useState(false);
     const contextoUsuario = useContext(ContextoUsuarioLogado);
 
     function manipularMudanca(evento) {
-        setCategoria({
-            ...categoria,
+        setFabricante({
+            ...fabricante,
             [evento.target.name]: evento.target.value
         });
     }
@@ -20,7 +20,7 @@ export default function FormCadCategorias(props) {
         const formulario = evento.currentTarget;
         if (formulario.checkValidity()) {
             if (!props.modoEdicao) {
-                gravar(categoria,token).then((resposta) => {
+                gravar(fabricante,token).then((resposta) => {
                     alert(resposta.mensagem);
                     props.setExibirTabela(true);
                 }).catch((erro) => {
@@ -28,10 +28,10 @@ export default function FormCadCategorias(props) {
                 });
             }
             else {
-                alterar(categoria, token).then((resposta) => {
+                alterar(fabricante, token).then((resposta) => {
                     alert("Atualizado com sucesso!");
                     props.setModoEdicao(false);
-                    props.setCategoriaSelecionada( { codigo: 0, descricao: "" });
+                    props.setFabricanteSelecionado( { codigo: 0, descricao: "" });
 
                     setValidado(false);
                 }).catch((erro) => {
@@ -65,10 +65,10 @@ export default function FormCadCategorias(props) {
                                     id="codigo"
                                     name="codigo"
                                     onChange={manipularMudanca}
-                                    value={categoria.codigo}
+                                    value={fabricante.codigo}
                                     disabled />
                             </FloatingLabel>
-                            <Form.Control.Feedback type="invalid">Informe o código da categoria!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Informe o código do fabricante!</Form.Control.Feedback>
                         </Form.Group>
                     </Col>
                 </Row>
@@ -76,19 +76,19 @@ export default function FormCadCategorias(props) {
                     <Col>
                         <Form.Group>
                             <FloatingLabel
-                                label="Categoria:"
+                                label="fabricante:"
                                 className="mb-3"
                             >
                                 <Form.Control
                                     type="text"
-                                    placeholder="Informe a descrição da categoria"
+                                    placeholder="Informe a descrição do fabricante"
                                     id="descricao"
                                     name="descricao"
                                     onChange={manipularMudanca}
-                                    value={categoria.descricao}
+                                    value={fabricante.descricao}
                                     required />
                             </FloatingLabel>
-                            <Form.Control.Feedback type="invalid">Informe a descrição da categoria!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Informe a descrição do fabricante!</Form.Control.Feedback>
                         </Form.Group>
                     </Col>
                 </Row>
